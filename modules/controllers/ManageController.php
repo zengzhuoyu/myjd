@@ -8,6 +8,8 @@ use Yii;
 
 use app\modules\models\Admin;
 
+use yii\data\Pagination;
+
 class ManageController extends Controller
 {
 
@@ -43,6 +45,86 @@ class ManageController extends Controller
 
         $model->adminuser = $adminuser;
         return $this->render('mailchangepass',['model' => $model]);
+    }
+
+    //管理员列表
+    public function actionManagers(){
+
+        $this->layout = "layout1";
+        $model = Admin::find();
+        $count = $model->count();
+
+        // totalCount 总页数 ; pageSize 每页显示条数
+        $pageSize = Yii::$app->params['pageSize']['manage'];
+        $pager = new Pagination(['totalCount' => $count,'pageSize' => $pageSize]);
+        $managers = $model->offSet($pager->offSet)->limit($pager->limit)->all();
+        return $this->render('managers',['managers' => $managers,'pager' => $pager]);
+    }
+
+    // 添加管理员
+    public function actionReg(){
+
+        $this->layout = 'layout1';
+        $model = new Admin;
+        if(Yii::$app->request->isPost){
+            $post = Yii::$app->request->post();
+            if($model->reg($post)){
+                Yii::$app->session->setFlash('info','添加成功');
+            }else{
+                Yii::$app->session->setFlash('info','添加失败');
+            }
+        }
+
+        //清除页面显示密码
+        $model->adminpass = '';
+        $model->repass = '';
+        return $this->render('reg',['model' => $model]);
+    }
+
+    //删除管理员
+    public function actionDel()
+    {
+        $adminid = (int)Yii::$app->request->get("adminid");
+        if (empty($adminid) || $adminid == 1) {
+            $this->redirect(['manage/managers']);
+            return false;
+        }
+        $model = new Admin;
+        if ($model->deleteAll('adminid = :id', [':id' => $adminid])) {
+            Yii::$app->session->setFlash('info', '删除成功');
+            $this->redirect(['manage/managers']);
+        }
+    }    
+
+    //当前登录管理员邮箱的修改
+    public function actionChangeemail()
+    {
+        $this->layout = 'layout1';
+        $model = Admin::find()->where('adminuser = :user', [':user' => Yii::$app->session['admin']['adminuser']])->one();
+        if (Yii::$app->request->isPost) {
+            $post = Yii::$app->request->post();
+            if ($model->changeemail($post)) {
+                Yii::$app->session->setFlash('info', '修改成功');
+            }
+        }
+        $model->adminpass = "";
+        return $this->render('changeemail', ['model' => $model]);
+    }
+
+    //当前登录管理员密码的修改
+    public function actionChangepass()
+    {
+        $this->layout = "layout1";
+        $model = Admin::find()->where('adminuser = :user', [':user' => Yii::$app->session['admin']['adminuser']])->one();
+        if (Yii::$app->request->isPost) {
+            $post = Yii::$app->request->post();
+            if ($model->changepass($post)) {
+                Yii::$app->session->setFlash('info', '修改成功');
+            }
+        }
+        $model->adminpass = '';
+        $model->repass = '';
+        return $this->render('changepass', ['model' => $model]);
     }
 
 }
