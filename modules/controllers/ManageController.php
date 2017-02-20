@@ -10,7 +10,9 @@ use app\modules\models\Admin;
 
 use yii\data\Pagination;
 
-class ManageController extends Controller
+use app\modules\controllers\CommonController;
+
+class ManageController extends CommonController
 {
 
     public function actionMailchangepass()
@@ -94,7 +96,7 @@ class ManageController extends Controller
             Yii::$app->session->setFlash('info', '删除成功');
             $this->redirect(['manage/managers']);
         }
-    }    
+    }
 
     //当前登录管理员邮箱的修改
     public function actionChangeemail()

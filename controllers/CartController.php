@@ -55,7 +55,7 @@ class CartController extends CommonController
         }
         $data['Cart']['createtime'] = time();
         $model->load($data);
-        $model->save();
+        $model->save();//有更新和创建的功能
         return $this->redirect(['cart/index']);
     }
 

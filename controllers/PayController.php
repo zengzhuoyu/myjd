@@ -7,7 +7,7 @@ use Yii;
 
 class PayController extends CommonController
 {
-    public $enableCsrfValidation = false;
+    public $enableCsrfValidation = false;//关闭csrf
     public function actionNotify()
     {
         if (Yii::$app->request->isPost) {

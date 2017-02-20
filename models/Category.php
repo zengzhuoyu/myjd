@@ -39,28 +39,25 @@ class Category extends ActiveRecord
         return false;
     }
 
-    //所有分类
     public function getData()
     {
         $cates = self::find()->all();
-        $cates = ArrayHelper::toArray($cates);//转换成数组
+        $cates = ArrayHelper::toArray($cates);
         return $cates;
     }
 
-    //显示级别顺序
     public function getTree($cates, $pid = 0)
     {
         $tree = [];
         foreach($cates as $cate) {
             if ($cate['parentid'] == $pid) {
-                $tree[] = $cate;//所有顶级分类
+                $tree[] = $cate;
                 $tree = array_merge($tree, $this->getTree($cates, $cate['cateid']));
             }
         }
         return $tree;
     }
 
-    //显示级别
     public function setPrefix($data, $p = "|-----")
     {
         $tree = [];

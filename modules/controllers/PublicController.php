@@ -35,7 +35,7 @@ class PublicController extends Controller
             Yii::$app->end();
         }
         $this->goback();//从哪来回到哪去
-    }    
+    }
 
     //找回密码
     public function actionSeekpassword(){
@@ -49,6 +49,6 @@ class PublicController extends Controller
                 Yii::$app->session->setFlash('info','电子邮件已发送成功,请注意查收');
              }
         }
-        return $this->render('seekpassword',['model' => $model]); 
+        return $this->render('seekpassword',['model' => $model]);
     }
 }

@@ -133,7 +133,7 @@
                         <?php endif; ?>
 
 						<div class="image">
-                            <img alt="<?php echo $pro->title ?>" src="<?php echo $pro->cover ?>-covermiddle" data-echo="<?php echo $pro->cover ?>-covermiddle" />
+                            <img alt="<?php echo $pro->title ?>" src="<?php echo 'http://'.$pro->cover ?>-covermiddle" data-echo="<?php echo $pro->cover ?>-covermiddle" />
 						</div>
 						<div class="body">
 							<div class="title">

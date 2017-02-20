@@ -83,13 +83,14 @@ class OrderController extends CommonController
                     if (!$model->add($data)) {
                         throw new \Exception();
                     }
-                    Cart::deleteAll('productid = :pid' , [':pid' => $product['productid']]);
+                    Cart::deleteAll('productid = :pid' , [':pid' => $product['productid']]);//清空购物车
+                    //商品库存要减少
                     Product::updateAllCounters(['num' => -$product['productnum']], 'productid = :pid', [':pid' => $product['productid']]);
                 }
             }
-            $transaction->commit();
+            $transaction->commit();//都成功,执行提交
         }catch(\Exception $e) {
-            $transaction->rollback();
+            $transaction->rollback();//有异常,回滚
             return $this->redirect(['cart/index']);
         }
         return $this->redirect(['order/check', 'orderid' => $orderid]);
@@ -153,7 +154,7 @@ class OrderController extends CommonController
             $orderid = Yii::$app->request->get('orderid');
             $paymethod = Yii::$app->request->get('paymethod');
             if (empty($orderid) || empty($paymethod)) {
-                throw new \Exception();
+                throw new \Exception();//抛异常
             }
             if ($paymethod == 'alipay') {
                 return Pay::alipay($orderid);
@@ -165,7 +166,7 @@ class OrderController extends CommonController
     public function actionGetexpress()
     {
         $expressno = Yii::$app->request->get('expressno');
-        $res = Express::search($expressno);
+        $res = Express::search($expressno);//返回json格式的数据
         echo $res;
         exit;
     }

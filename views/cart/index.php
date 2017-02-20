@@ -16,7 +16,7 @@
             <div class="row no-margin cart-item">
                 <div class="col-xs-12 col-sm-2 no-margin">
                 <a href="<?php echo yii\helpers\Url::to(['product/detail', 'productid' => $product['productid']]) ?>" class="thumb-holder">
-                    <img class="lazy" alt="" src="<?php echo $product['cover'] ?>-picsmall" />
+                    <img class="lazy" alt="" src="<?php echo 'http://'.$product['cover'] ?>-picsmall" />
                     </a>
                 </div>
 

@@ -8,7 +8,9 @@ use Yii;
 
 use app\models\Category;
 
-class CategoryController extends Controller
+use app\modules\controllers\CommonController;
+
+class CategoryController extends CommonController
 {
 
     public function actionList()
