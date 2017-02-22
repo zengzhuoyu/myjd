@@ -8,6 +8,7 @@ use yii\data\Pagination;
 
 class ProductController extends CommonController
 {
+    //前台商品分类页面
     public function actionIndex()
     {
         $this->layout = "layout2";
@@ -16,7 +17,7 @@ class ProductController extends CommonController
         $params = [':cid' => $cid];
         $model = Product::find()->where($where, $params);
         $all = $model->asArray()->all();
-        
+
         $count = $model->count();
         $pageSize = Yii::$app->params['pageSize']['frontproduct'];
         $pager = new Pagination(['totalCount' => $count, 'pageSize' => $pageSize]);
@@ -28,6 +29,7 @@ class ProductController extends CommonController
         return $this->render("index", ['sale' => $sale, 'tui' => $tui, 'hot' => $hot, 'all' => $all, 'pager' => $pager, 'count' => $count]);
     }
 
+    //前台商品详情页面
     public function actionDetail()
     {
         $this->layout = "layout2";

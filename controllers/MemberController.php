@@ -6,6 +6,7 @@ use Yii;
 
 class MemberController extends CommonController
 {
+    //前台用户注册登录页面
     public function actionAuth()
     {
         $this->layout = 'layout2';
@@ -28,7 +29,7 @@ class MemberController extends CommonController
     }
 
     public function actionLogout()
-    {   
+    {
         Yii::$app->session->remove('loginname');
         Yii::$app->session->remove('isLogin');
         if (!isset(Yii::$app->session['isLogin'])) {
@@ -49,6 +50,7 @@ class MemberController extends CommonController
         return $this->render('auth', ['model' => $model]);
     }
 
+    //跳转到qq登录页面
     public function actionQqlogin()
     {
         require_once("../vendor/qqlogin/qqConnectAPI.php");
@@ -56,18 +58,20 @@ class MemberController extends CommonController
         $qc->qq_login();
     }
 
+    //点击qq登录后执行的回调方法
     public function actionQqcallback()
     {
+        //如果qq账号已经绑定该网站，直接登录 否则需要进行绑定
         require_once("../vendor/qqlogin/qqConnectAPI.php");
         $auth = new \OAuth();
         $accessToken = $auth->qq_callback();
-        $openid = $auth->get_openid();
+        $openid = $auth->get_openid();//每一个qq号多会有对应的一个唯一的openid
         $qc = new \QC($accessToken, $openid);
-        $userinfo = $qc->get_user_info();
+        $userinfo = $qc->get_user_info();//获取用户信息
         $session = Yii::$app->session;
         $session['userinfo'] = $userinfo;
         $session['openid'] = $openid;
-        if ($model = User::find()->where('openid = :openid', [':openid' => $openid])->one()) {
+        if ($model = User::find()->where('openid = :openid', [':openid' => $openid])->one()) {//qq账号已经绑定该网站
             $session['loginname'] = $model->username;
             $session['isLogin'] = 1;
             return $this->redirect(['index/index']);
@@ -75,9 +79,11 @@ class MemberController extends CommonController
         return $this->redirect(['member/qqreg']);
     }
 
+    //没有绑定的用户进行绑定
     public function actionQqreg()
     {
         $this->layout = "layout2";
+
         $model = new User;
         if (Yii::$app->request->isPost) {
             $post = Yii::$app->request->post();
@@ -91,12 +97,6 @@ class MemberController extends CommonController
         }
         return $this->render('qqreg', ['model' => $model]);
     }
-
-
-
-
-
-
 
 
 }

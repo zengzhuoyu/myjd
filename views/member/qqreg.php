@@ -6,10 +6,11 @@
 <main id="authentication" class="inner-bottom-md">
 	<div class="container">
 		<div class="row">
-			
+
 			<div class="col-md-6">
 				<section class="section sign-in inner-right-xs">
                     <h2 class="bordered">
+                        <!-- 显示qq头像 -->
                         <img src="<?php echo Yii::$app->session['userinfo']['figureurl_1'] ?>">
                         完善您的信息
                     </h2>

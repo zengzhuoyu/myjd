@@ -8,6 +8,7 @@ use Yii;
 
 class CartController extends CommonController
 {
+    //前台购物车页面
     public function actionIndex()
     {
         if (Yii::$app->session['isLogin'] != 1) {

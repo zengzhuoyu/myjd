@@ -13,6 +13,7 @@ use dzer\express\Express;
 
 class OrderController extends CommonController
 {
+    //前台用户订单中心页面
     public function actionIndex()
     {
         $this->layout = "layout2";
@@ -25,6 +26,7 @@ class OrderController extends CommonController
         return $this->render("index", ['orders' => $orders]);
     }
 
+    //前台收银台页面
     public function actionCheck()
     {
         if (Yii::$app->session['isLogin'] != 1) {

@@ -1,4 +1,5 @@
-<!-- ============================================================= HEADER : END ============================================================= -->		<div id="single-product">
+<!-- ============================================================= HEADER : END ============================================================= -->
+<div id="single-product">
     <div class="container" style="padding-top:10px">
 <?php foreach($orders as $order): ?>
 <div style="margin-bottom:30px;">
@@ -31,7 +32,7 @@
                 <?php echo $order->orderid ?>
               </span>
             </td>
-            
+
           </tr>
         </tbody>
       </table>
@@ -76,7 +77,7 @@
                       </span>
                     </span>
                   </div>
-                  
+
                   <span>
                   </span>
                 </div>
@@ -117,7 +118,7 @@
                     </span>
                   </span>
                 </div>
-                
+
               </div>
             </td>
             <?php if ($i == 1): ?>
@@ -151,7 +152,7 @@
                     )
                   </span>
                 </p>
-                
+
                 <div>
                 </div>
               </div>
@@ -202,5 +203,7 @@
   </div>
 </div>
 <?php endforeach; ?>
+</div>
+
 </div>
 

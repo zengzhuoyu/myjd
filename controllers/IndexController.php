@@ -6,6 +6,7 @@ use app\models\Product;
 
 class IndexController extends CommonController
 {
+    //前台首页
     public function actionIndex()
     {
         $this->layout = "layout1";

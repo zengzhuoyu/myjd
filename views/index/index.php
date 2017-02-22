@@ -1,10 +1,10 @@
 <!-- ============================================================= HEADER : END ============================================================= -->		<div id="top-banner-and-menu">
 	<div class="container">
-		
+
 		<div class="col-xs-12 col-sm-4 col-md-3 sidemenu-holder">
 			<!-- ================================== TOP NAVIGATION ================================== -->
 <div class="side-menu animate-dropdown">
-    <div class="head"><i class="fa fa-list"></i> 所有分类 </div>        
+    <div class="head"><i class="fa fa-list"></i> 所有分类 </div>
     <nav class="yamm megamenu-horizontal" role="navigation">
         <ul class="nav">
 <?php
@@ -27,7 +27,7 @@
         <a href="#"><img alt="" src="/assets/images/banners/banner-side.png" /></a>
     </div>
 </div>
-<!-- ================================== MEGAMENU VERTICAL ================================== -->                        
+<!-- ================================== MEGAMENU VERTICAL ================================== -->
                     </li>
                 </ul>
             </li><!-- /.menu-item -->
@@ -42,10 +42,10 @@
 
 		<div class="col-xs-12 col-sm-8 col-md-9 homebanner-holder">
 			<!-- ========================================== SECTION – HERO ========================================= -->
-			
+
 <div id="hero">
 	<div id="owl-main" class="owl-carousel owl-inner-nav owl-ui-sm">
-		
+
 		<div class="item" style="background-image: url(/assets/images/sliders/slider01.jpg);">
 			<div class="container-fluid">
 				<div class="caption vertical-center text-left">
@@ -90,8 +90,8 @@
 
 	</div><!-- /.owl-carousel -->
 </div>
-			
-<!-- ========================================= SECTION – HERO : END ========================================= -->			
+
+<!-- ========================================= SECTION – HERO : END ========================================= -->
 		</div><!-- /.homebanner-holder -->
 
 	</div><!-- /.container -->
@@ -139,10 +139,10 @@
                         <div class="col-sm-4 col-md-3  no-margin product-item-holder hover">
                             <div class="product-item">
                                 <?php if ($pro->ishot): ?>
-                                <div class="ribbon red"><span>HOT</span></div> 
+                                <div class="ribbon red"><span>HOT</span></div>
                                 <?php endif; ?>
                                 <?php if ($pro->issale): ?>
-                                <div class="ribbon green"><span>sale</span></div> 
+                                <div class="ribbon green"><span>sale</span></div>
                                 <?php endif; ?>
 
                                 <div class="image">
@@ -171,7 +171,7 @@
                         <a class="btn-loadmore" href="#">
                             <i class="fa fa-plus"></i>
                             查看更多</a>
-                    </div> 
+                    </div>
 
                 </div>
                 <div class="tab-pane" id="new-arrivals">
@@ -180,10 +180,10 @@
                         <div class="col-sm-4 col-md-3  no-margin product-item-holder hover">
                             <div class="product-item">
                                 <?php if ($pro->ishot): ?>
-                                <div class="ribbon red"><span>HOT</span></div> 
+                                <div class="ribbon red"><span>HOT</span></div>
                                 <?php endif; ?>
                                 <?php if ($pro->issale): ?>
-                                <div class="ribbon green"><span>sale</span></div> 
+                                <div class="ribbon green"><span>sale</span></div>
                                 <?php endif; ?>
 
                                 <div class="image">
@@ -212,7 +212,7 @@
                         <a class="btn-loadmore" href="#">
                             <i class="fa fa-plus"></i>
                             查看更多</a>
-                    </div> 
+                    </div>
 
                 </div>
 
@@ -222,10 +222,10 @@
                         <div class="col-sm-4 col-md-3  no-margin product-item-holder hover">
                             <div class="product-item">
                                 <?php if ($pro->ishot): ?>
-                                <div class="ribbon red"><span>HOT</span></div> 
+                                <div class="ribbon red"><span>HOT</span></div>
                                 <?php endif; ?>
                                 <?php if ($pro->issale): ?>
-                                <div class="ribbon green"><span>sale</span></div> 
+                                <div class="ribbon green"><span>sale</span></div>
                                 <?php endif; ?>
 
                                 <div class="image">
@@ -250,13 +250,13 @@
                         </div>
                     <?php endforeach; ?>
 
-                        
+
                     </div>
                     <div class="loadmore-holder text-center">
                         <a class="btn-loadmore" href="#">
                             <i class="fa fa-plus"></i>
                             查看更多</a>
-                    </div> 
+                    </div>
                 </div>
             </div>
         </div>
@@ -269,7 +269,7 @@
 
         <div class="product-grid-holder medium">
             <div class="col-xs-12 col-md-7 no-margin">
-                
+
                 <div class="row no-margin">
                     <?php for ($i = 0;$i < 3;$i++): ?>
 					<?php if (empty($data['all'][$i])) continue; ?>
@@ -296,7 +296,7 @@
                     </div><!-- /.product-item-holder -->
                     <?php endfor; ?>
                 </div><!-- /.row -->
-                
+
                 <div class="row no-margin">
                     <?php for ($i = 3;$i < 6;$i++): ?>
 					<?php if (empty($data['all'][$i])) continue; ?>
@@ -372,7 +372,7 @@
 <section id="recently-reviewd" class="wow fadeInUp">
 	<div class="container">
 		<div class="carousel-holder hover">
-			
+
 			<div class="title-nav">
 				<h2 class="h1">所有商品</h2>
 				<div class="nav-holder">
@@ -386,10 +386,10 @@
                 <div class="no-margin carousel-item product-item-holder size-small hover">
 					<div class="product-item">
                         <?php if ($pro->ishot): ?>
-                        <div class="ribbon red"><span>HOT</span></div> 
+                        <div class="ribbon red"><span>HOT</span></div>
                         <?php endif; ?>
                         <?php if ($pro->issale): ?>
-                        <div class="ribbon green"><span>sale</span></div> 
+                        <div class="ribbon green"><span>sale</span></div>
                         <?php endif; ?>
 
 						<div class="image">
@@ -421,7 +421,7 @@
 <section id="top-brands" class="wow fadeInUp">
     <div class="container">
         <div class="carousel-holder" >
-            
+
             <div class="title-nav">
                 <h1>热门品牌</h1>
                 <div class="nav-holder">
@@ -429,27 +429,27 @@
                     <a href="#next" data-target="#owl-brands" class="slider-next btn-next fa fa-angle-right"></a>
                 </div>
             </div><!-- /.title-nav -->
-            
+
             <div id="owl-brands" class="owl-carousel brands-carousel">
-                
+
                 <div class="carousel-item">
                     <a href="#">
                         <img alt="" src="/assets/images/brands/brand-01.jpg" />
                     </a>
                 </div><!-- /.carousel-item -->
-                
+
                 <div class="carousel-item">
                     <a href="#">
                         <img alt="" src="/assets/images/brands/brand-02.jpg" />
                     </a>
                 </div><!-- /.carousel-item -->
-                
+
                 <div class="carousel-item">
                     <a href="#">
                         <img alt="" src="/assets/images/brands/brand-03.jpg" />
                     </a>
                 </div><!-- /.carousel-item -->
-                
+
                 <div class="carousel-item">
                     <a href="#">
                         <img alt="" src="/assets/images/brands/brand-04.jpg" />
@@ -485,5 +485,6 @@
         </div><!-- /.carousel-holder -->
     </div><!-- /.container -->
 </section><!-- /#top-brands -->
-<!-- ========================================= TOP BRANDS : END ========================================= -->		<!-- ============================================================= FOOTER ============================================================= -->
+<!-- ========================================= TOP BRANDS : END ========================================= -->
+<!-- ============================================================= FOOTER ============================================================= -->
 

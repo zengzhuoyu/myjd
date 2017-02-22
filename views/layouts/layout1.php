@@ -21,10 +21,10 @@
 		<link rel="stylesheet" href="/assets/css/owl.transitions.css">
 		<link rel="stylesheet" href="/assets/css/animate.min.css">
 
-        
+
         <!-- Icons/Glyphs -->
 		<link rel="stylesheet" href="/assets/css/font-awesome.min.css">
-		
+
 		<!-- Favicon -->
 		<link rel="shortcut icon" href="/assets/images/favicon.ico">
 
@@ -34,10 +34,10 @@
 			<script src="/assets/js/respond.min.js"></script>
 		<![endif]-->
 
- 
+
 	</head>
 <body>
-	
+
 	<div class="wrapper">
 		<!-- ============================================================= TOP NAVIGATION ============================================================= -->
 <nav class="top-bar animate-dropdown">
@@ -67,7 +67,7 @@
 <!-- ============================================================= TOP NAVIGATION : END ============================================================= -->		<!-- ============================================================= HEADER ============================================================= -->
 <header>
 	<div class="container no-padding">
-		
+
 		<div class="col-xs-12 col-sm-12 col-md-3 logo-holder">
 			<!-- ============================================================= LOGO ============================================================= -->
 <div class="logo">
@@ -107,7 +107,7 @@
                 </li>
             </ul>
 
-            <a style="padding:15px 15px 13px 12px" class="search-button" href="#" ></a>    
+            <a style="padding:15px 15px 13px 12px" class="search-button" href="#" ></a>
 
         </div>
     </form>
@@ -119,16 +119,16 @@
 
     <!-- ============================================================= SHOPPING CART DROPDOWN ============================================================= -->
     <div class="top-cart-holder dropdown animate-dropdown">
-        
+
         <div class="basket">
-            
+
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                 <div class="basket-item-count">
                 <span class="count"><?php echo count($this->params['cart']['products']) ?></span>
                     <img src="/assets/images/icon-cart.png" alt="" />
                 </div>
 
-                <div class="total-price-basket"> 
+                <div class="total-price-basket">
                     <span class="lbl">您的购物车:</span>
                     <span class="total-price">
                     <span class="sign">￥</span><span class="value"><?php echo $this->params['cart']['total'] ?></span>
@@ -178,7 +178,7 @@
 </header>
 <?php echo $content; ?>
 <footer id="footer" class="color-bg">
-    
+
     <div class="container">
         <div class="row no-margin widgets-row">
             <div class="col-xs-12  col-sm-4 no-margin-left">
@@ -196,7 +196,7 @@
                         <div class="price-prev">￥<?php echo $pro->price ?></div>
                         <div class="price-current">￥<?php echo $pro->saleprice ?></div>
                         </div>
-                    </div>  
+                    </div>
 
                     <div class="col-xs-12 col-sm-3 no-margin">
                     <a href="<?php echo yii\helpers\Url::to(['product/detail', 'productid' => $pro->productid]) ?>" class="thumb-holder">
@@ -226,7 +226,7 @@
                         <div class="price-prev">￥<?php echo $pro->price ?></div>
                         <div class="price-current">￥<?php echo $pro->saleprice ?></div>
                         </div>
-                    </div>  
+                    </div>
 
                     <div class="col-xs-12 col-sm-3 no-margin">
                     <a href="<?php echo yii\helpers\Url::to(['product/detail', 'productid' => $pro->productid]) ?>" class="thumb-holder">
@@ -256,7 +256,7 @@
                         <div class="price-prev">￥<?php echo $pro->price ?></div>
                         <div class="price-current">￥<?php echo $pro->saleprice ?></div>
                         </div>
-                    </div>  
+                    </div>
 
                     <div class="col-xs-12 col-sm-3 no-margin">
                     <a href="<?php echo yii\helpers\Url::to(['product/detail', 'productid' => $pro->productid]) ?>" class="thumb-holder">
@@ -293,14 +293,14 @@
     <div class="footer-logo">
 		<img alt="logo" src="/assets/images/logo.PNG" width="233" height="54"/>
     </div><!-- /.footer-logo -->
-    
+
     <p class="regular-bold"> 请通过电话，电子邮件随时联系我们</p>
-    
+
     <p>
         西城区二环到三环德胜门外大街10号TCL大厦3层(马甸桥南), 北京市西城区, 中国
         <br>慕课网 (QQ群:416465236)
     </p>
-    
+
     <!--<div class="social-icons">
         <h3>Get in touch</h3>
         <ul>
